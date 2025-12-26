@@ -22,3 +22,38 @@ html {
   width: max-content;
   animation: marquee 22s linear infinite;
 }
+/* Accesibilidad: skip link */
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:12px;
+  z-index:9999;
+  padding:10px 14px;
+  border-radius:9999px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(10,10,10,.9);
+  color:#fff;
+  font-size:14px;
+}
+.skip-link:focus{
+  left:12px;
+}
+
+/* Focus visible consistente */
+:focus-visible{
+  outline: none;
+}
+
+/* Marquee: respeta reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .marquee{
+    animation: none !important;
+    transform: none !important;
+  }
+  html{ scroll-behavior: auto; }
+}
+
+/* Sutil selección */
+::selection{
+  background: rgba(255,255,255,0.18);
+}
