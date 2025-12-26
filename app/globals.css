@@ -9,3 +9,16 @@
 html, body {
   height: 100%;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee {
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
