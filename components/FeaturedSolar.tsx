@@ -18,8 +18,8 @@ const solarCards = [
     img: site.images.solarLamp2
   },
   {
-    title: "Abanicos solares",
-    desc: "Soluciones de ventilación con enfoque en uso eficiente de energía.",
+    title: "Abanicos",
+    desc: "Opciones de ventilación para diferentes escenarios de uso.",
     img: site.images.solarFan1
   },
   {
@@ -30,7 +30,11 @@ const solarCards = [
 ];
 
 export default function FeaturedSolar() {
-  const wa = buildWhatsAppLink(site.phones[0], "Hola, quiero cotizar lámparas/linternas solares y abanicos. ¿Me apoyan?");
+  const wa = buildWhatsAppLink(
+    site.whatsappPhone,
+    "Hola, quiero cotizar lámparas/linternas solares y abanicos. ¿Me apoyan?"
+  );
+
   return (
     <section className="border-t border-white/10 bg-neutral-950">
       <Container className="py-16">
@@ -38,7 +42,7 @@ export default function FeaturedSolar() {
           <FadeIn>
             <SectionHeading
               eyebrow="DESTACADO"
-              title="Solar Lighting & Cooling"
+              title="Energía solar y renovable"
               description="Sección destacada para lámparas y linternas solares, y abanicos. Contáctanos para cotizar."
             />
           </FadeIn>
