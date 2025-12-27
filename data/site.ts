@@ -3,10 +3,10 @@ export const site = {
   ruc: "R.U.C. 155751256-2-2024  D.V. 35",
   address: "Calle 75, Local No.12, San Francisco, Panamá, Ciudad de Panama",
 
-  // Principal (cliente pidió que este sea el número principal)
+  // Principal
   whatsappPhone: "+507 6534-3521",
 
-  // phones[0] opcional, phones[1] como alterno (mantengo estructura)
+  // Alterno
   phones: ["+507 6534-3521", "+507 6671-2333"],
 
   emails: ["intramar28@gmail.com", "ventas@intramar.com.pa", "ventas@intramars.com"],
@@ -17,9 +17,24 @@ export const site = {
   ],
 
   images: {
+    // Brand / general
     logo: "/images/brand/intramar-logo.png",
     hero: "/images/hero/hero.jpg",
+
+    // Warehouse
     warehouse1: "/images/warehouse/warehouse-01.jpg",
     warehouse2: "/images/warehouse/warehouse-02.jpg",
+
+    // Featured solar lighting & cooling (rutas que ya definiste en /public)
+    solarLamp1: "/images/products/solar-lamp-01.jpg",
+    solarLamp2: "/images/products/solar-lamp-02.jpg",
+    solarLamp3: "/images/products/solar-lamp-03.jpg",
+    solarKit1: "/images/products/solar-kit-01.jpg",
+    solarKit2: "/images/products/solar-kit-02.jpg",
+    solarFan1: "/images/products/solar-fan-01.jpg",
+    solarFan2: "/images/products/solar-fan-02.jpg",
+
+    // Kits image (la nueva)
+    kits1: "/images/kits/kits-01.jpg",
   },
 };
