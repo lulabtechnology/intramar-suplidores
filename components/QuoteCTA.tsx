@@ -9,8 +9,7 @@ export default function QuoteCTA({
   title?: string;
   description?: string;
 }) {
-  const wa1 = buildWhatsAppLink(site.phones[0], "Hola, necesito una cotización. ¿Me pueden ayudar?");
-  const wa2 = buildWhatsAppLink(site.phones[1], "Hola, necesito una cotización. ¿Me pueden ayudar?");
+  const wa = buildWhatsAppLink(site.whatsappPhone, "Hola, necesito una cotización. ¿Me pueden ayudar?");
   const emailPrimary = site.emails[1];
 
   return (
@@ -19,19 +18,12 @@ export default function QuoteCTA({
       <p className="mt-2 text-sm leading-6 text-neutral-300">{description}</p>
 
       <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <ButtonLink href={wa1} variant="primary">
-          WhatsApp principal
-        </ButtonLink>
-        <ButtonLink href={wa2} variant="secondary">
-          WhatsApp alterno
-        </ButtonLink>
-        <ButtonLink href={`mailto:${emailPrimary}`} variant="secondary">
-          Email
-        </ButtonLink>
+        <ButtonLink href={wa} variant="primary">WhatsApp</ButtonLink>
+        <ButtonLink href={`mailto:${emailPrimary}`} variant="secondary">Email</ButtonLink>
       </div>
 
       <p className="mt-4 text-xs text-white/50">
-        Tel: {site.phones[0]} / {site.phones[1]} · Emails: {site.emails.join(" / ")}
+        WhatsApp: {site.whatsappPhone} · Tel alterno: {site.phones[1]} · Emails: {site.emails.join(" / ")}
       </p>
     </div>
   );
