@@ -18,28 +18,29 @@ export default function Hero() {
           src={site.images.warehouse2}
           alt="Warehouse"
           fill
-          className="object-cover opacity-35"
+          className="object-cover opacity-25"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-950/70 to-neutral-950" />
+        {/* Light overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/55 to-white/90" />
       </div>
 
       <Container className="relative py-16 md:py-24">
         <FadeIn>
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/80">
-            <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
-            {site.company} — Panamá
+          <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs text-slate-700 shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500" />
+            <span className="font-semibold text-slate-900">{site.company}</span>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.05}>
-          <h1 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight text-white md:text-6xl">
-            {site.home.hero.headline}
+          <h1 className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl">
+            <span className="grad-text">{site.home.hero.headline}</span>
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-neutral-200 md:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 md:text-lg">
             {site.home.hero.subheadline}
           </p>
         </FadeIn>
@@ -57,17 +58,18 @@ export default function Hero() {
 
         <FadeIn delay={0.2}>
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm font-medium text-white">WhatsApp</p>
-              <p className="mt-1 text-sm text-neutral-300">{site.whatsappPhone}</p>
+            <div className="surface surface-hover p-5">
+              <p className="text-sm font-bold text-slate-900">WhatsApp</p>
+              <p className="mt-1 text-sm text-slate-700">{site.whatsappPhone}</p>
+              <p className="mt-2 text-xs text-slate-500">Principal</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm font-medium text-white">Email</p>
-              <p className="mt-1 text-sm text-neutral-300">{site.emails[1]}</p>
+            <div className="surface surface-hover p-5">
+              <p className="text-sm font-bold text-slate-900">Email</p>
+              <p className="mt-1 text-sm text-slate-700">{site.emails[1]}</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              <p className="text-sm font-medium text-white">Ubicación</p>
-              <p className="mt-1 text-sm text-neutral-300">{site.address}</p>
+            <div className="surface surface-hover p-5">
+              <p className="text-sm font-bold text-slate-900">Ubicación</p>
+              <p className="mt-1 text-sm text-slate-700">{site.address}</p>
             </div>
           </div>
         </FadeIn>
