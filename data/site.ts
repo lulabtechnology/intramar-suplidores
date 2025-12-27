@@ -2,16 +2,24 @@ export const site = {
   company: "INTRAMAR SUPLIDORES S.A",
   ruc: "155751256-2-2024  D.V. 35",
   address: "Calle 75, Local No.12, San Francisco, Panamá, Ciudad de Panama",
-  phones: ["+507 6671-2333", "+507 6534-3521"],
+
+  // 👇 WhatsApp principal (cliente pidió 6534-3521)
+  whatsappPhone: "+507 6534-3521",
+
+  // Teléfonos (puedes mantener ambos como información general)
+  phones: ["+507 6534-3521", "+507 6671-2333"],
+
   emails: ["intramar28@gmail.com", "ventas@intramar.com.pa", "ventas@intramars.com"],
+
   contact: {
     name: "Steve Nahem",
     role: "Gerente General",
-    phone: "+507 6671-2333"
+    // (no ponemos teléfono aquí para no “amarrar” un número a una persona)
+    phone: ""
   },
-  brand: {
-    logo: "/images/brand/intramar-logo.png"
-  },
+
+  brand: { logo: "/images/brand/intramar-logo.png" },
+
   images: {
     warehouse1: "/images/warehouse/warehouse-01.jpg",
     warehouse2: "/images/warehouse/warehouse-02.jpg",
@@ -23,6 +31,7 @@ export const site = {
     solarFan1: "/images/products/solar-fan-01.jpg",
     solarFan2: "/images/products/solar-fan-02.jpg"
   },
+
   partners: [
     { name: "PNUD", src: "/images/partners/pnud.png" },
     { name: "FAO", src: "/images/partners/fao.png" },
@@ -33,6 +42,7 @@ export const site = {
     { name: "UNHCR", src: "/images/partners/unhcr.png" },
     { name: "AECID", src: "/images/partners/aecid.png" }
   ],
+
   home: {
     hero: {
       headline: "Suministros y soluciones para tu operación",
