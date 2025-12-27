@@ -1,6 +1,7 @@
 export type CatalogCategory = {
   slug: string;
   name: string;
+  description: string;
   items: string[];
 };
 
@@ -8,6 +9,7 @@ export const catalog: CatalogCategory[] = [
   {
     slug: "textiles",
     name: "TEXTILES",
+    description: "Prendas y textiles para distintos usos. Contáctanos para cotizar.",
     items: [
       "Camisetas",
       "Jackets",
@@ -18,12 +20,13 @@ export const catalog: CatalogCategory[] = [
       "Sabanas",
       "Toallas",
       "Mantas",
-      "Mantas Termicas"
-    ]
+      "Mantas Termicas",
+    ],
   },
   {
     slug: "insumos-marinos",
     name: "INSUMOS MARINOS",
+    description: "Suministros para operaciones marinas. Contáctanos para cotizar.",
     items: [
       "Chalecos Salvavidas",
       "Botes Salvavidas",
@@ -31,24 +34,26 @@ export const catalog: CatalogCategory[] = [
       "Accesorios para Buceo",
       "Sogas",
       "Sogas Marinas",
-      "Muelles Flotantes"
-    ]
+      "Muelles Flotantes",
+    ],
   },
   {
     slug: "insumos-vectores",
     name: "INSUMOS VECTORES",
+    description: "Productos para control y protección. Contáctanos para cotizar.",
     items: [
       "Repelentes Adultos y Niños",
       "Toallitas Anti Mosquitos",
       "Inciensos Anti Mosquitos",
       "Diferentes Accesorios/Pulseras Anti Mosquitos",
       "Mosquiteros",
-      "Mochilas de Fumigacion (Carga Solar)"
-    ]
+      "Mochilas de Fumigacion (Carga Solar)",
+    ],
   },
   {
     slug: "kits",
     name: "KITS",
+    description: "Kits por tipo para consulta rápida. Contáctanos para cotizar.",
     items: [
       "Shelter Kits",
       "Water Kits",
@@ -59,12 +64,13 @@ export const catalog: CatalogCategory[] = [
       "Baby kits",
       "Third Age Kits",
       "Home kits",
-      "Dream Kits"
-    ]
+      "Dream Kits",
+    ],
   },
   {
     slug: "agua",
     name: "AGUA",
+    description: "Soluciones para purificación y almacenamiento. Contáctanos para cotizar.",
     items: [
       "Pastillas Purificadoras",
       "Aqua gard",
@@ -72,36 +78,39 @@ export const catalog: CatalogCategory[] = [
       "Filtros",
       "Filtros Solares de Purificacion de Agua de Rios y de mar",
       "Tanques",
-      "Bidones de 5 litros"
-    ]
+      "Bidones de 5 litros",
+    ],
   },
   {
     slug: "plasticos",
     name: "PLÁSTICOS",
+    description: "Productos plásticos y escolares. Contáctanos para cotizar.",
     items: [
       "Juguetes",
       "Cubos de 5 litros",
       "Packs para Comida",
       "Parques para Niños",
       "Insumos Escolares",
-      "Mochilas"
-    ]
+      "Mochilas",
+    ],
   },
   {
-    slug: "seguridad-y-proteccion",
+    slug: "seguridad-proteccion",
     name: "SEGURIDAD Y PROTECCIÓN",
+    description: "Protección personal e insumos. Contáctanos para cotizar.",
     items: [
       "Guantes",
       "Guantes de Seguridad",
       "Mascarillas",
       "Geles para manos",
       "Batas desechables",
-      "Ropa desechable"
-    ]
+      "Ropa desechable",
+    ],
   },
   {
-    slug: "energia",
-    name: "ENERGÍA",
+    slug: "energia-solar-renovable",
+    name: "Energía solar y renovable",
+    description: "Soluciones solares y renovables. Contáctanos para cotizar.",
     items: [
       "Paneles solares",
       "Estaciones de Energia",
@@ -111,12 +120,13 @@ export const catalog: CatalogCategory[] = [
       "Radios Solares",
       "Biodigestores",
       "Carpas",
-      "Lonas"
-    ]
+      "Lonas",
+    ],
   },
   {
     slug: "agricolas",
     name: "AGRÍCOLAS",
+    description: "Herramientas e insumos agrícolas. Contáctanos para cotizar.",
     items: [
       "Motosierras",
       "Mochilas de Fumigacion",
@@ -128,7 +138,7 @@ export const catalog: CatalogCategory[] = [
       "Fertilizantes",
       "Herbicidas",
       "Granos",
-      "Semillas"
-    ]
-  }
+      "Semillas",
+    ],
+  },
 ];
