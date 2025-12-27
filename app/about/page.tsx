@@ -1,66 +1,63 @@
-import type { Metadata } from "next";
-import PageHeader from "@/components/PageHeader";
 import Container from "@/components/Container";
+import PageHeader from "@/components/PageHeader";
 import FadeIn from "@/components/motion/FadeIn";
-import QuoteCTA from "@/components/QuoteCTA";
 import { site } from "@/data/site";
-
-export const metadata: Metadata = {
-  title: "Sobre — INTRAMAR SUPLIDORES S.A",
-  description: "Información general y contacto de INTRAMAR SUPLIDORES S.A (Panamá)."
-};
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title="Sobre INTRAMAR"
+        breadcrumb="Inicio / Sobre"
+        eyebrow="SOBRE"
+        title="Sobre nosotros"
         description="Información general y formas de contacto para cotizaciones."
-        imageSrc={site.images.warehouse1}
-        crumbs={[
-          { label: "Inicio", href: "/" },
-          { label: "Sobre", href: "/about" }
-        ]}
+        imageSrc="/images/hero/hero.jpg"
+        imageFit="cover"
       />
 
-      <Container className="py-12">
-        <div className="grid gap-6 lg:grid-cols-12">
-          <FadeIn className="lg:col-span-7">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-7">
-              <h2 className="text-xl font-semibold tracking-tight text-white">
+      <section className="bg-transparent">
+        <Container className="py-12">
+          <FadeIn>
+            <div className="surface p-8">
+              <h2 className="text-2xl font-extrabold tracking-tight text-slate-900">
                 {site.company}
               </h2>
-              <p className="mt-3 text-sm leading-6 text-neutral-300">
-                Sitio institucional y catálogo por categorías. Aquí puedes explorar el listado
-                de productos y solicitar una cotización por WhatsApp o email.
+
+              <p className="mt-4 text-sm leading-7 text-slate-700">
+                Somos un sitio catálogo / institucional para consulta por categorías de productos.
+                Para precios, disponibilidad y opciones, contáctanos por WhatsApp o email.
               </p>
 
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm font-semibold text-white">R.U.C.</p>
-                  <p className="mt-1 text-sm text-neutral-300">{site.ruc}</p>
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-white/70 p-6">
+                  <p className="text-xs font-bold tracking-[0.22em] text-slate-500">
+                    R.U.C.
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-slate-900">
+                    {site.ruc}
+                  </p>
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm font-semibold text-white">Ubicación</p>
-                  <p className="mt-1 text-sm text-neutral-300">{site.address}</p>
+
+                <div className="rounded-2xl border border-slate-200 bg-white/70 p-6">
+                  <p className="text-xs font-bold tracking-[0.22em] text-slate-500">
+                    DIRECCIÓN
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-slate-900">
+                    {site.address}
+                  </p>
                 </div>
               </div>
 
-              <p className="mt-6 text-sm leading-6 text-neutral-300">
-                Para precios, cantidades, opciones y disponibilidad, contáctanos indicando la categoría
-                y los productos que necesitas.
+              <div className="mt-8 hairline" />
+
+              <p className="mt-6 text-sm text-slate-700">
+                Contacto principal por WhatsApp:{" "}
+                <span className="font-semibold text-slate-900">{site.whatsappPhone}</span>
               </p>
             </div>
           </FadeIn>
-
-          <FadeIn delay={0.05} className="lg:col-span-5">
-            <QuoteCTA
-              title="Cotiza con tu lista"
-              description="Envíanos por WhatsApp o email la categoría y el listado de productos que necesitas."
-            />
-          </FadeIn>
-        </div>
-      </Container>
+        </Container>
+      </section>
     </>
   );
 }
