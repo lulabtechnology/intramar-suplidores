@@ -3,23 +3,21 @@ export const site = {
   ruc: "155751256-2-2024  D.V. 35",
   address: "Calle 75, Local No.12, San Francisco, Panamá, Ciudad de Panama",
 
-  // ✅ WhatsApp principal (cliente pidió 6534-3521)
+  // ✅ WhatsApp principal (Marian Perez)
   whatsappPhone: "+507 6534-3521",
 
-  // Teléfonos (mantenemos el otro como alterno informativo)
+  // Teléfonos (principal, secundario)
   phones: ["+507 6534-3521", "+507 6671-2333"],
 
   emails: ["intramar28@gmail.com", "ventas@intramar.com.pa", "ventas@intramars.com"],
 
-  contact: {
-    name: "Steve Nahem",
-    role: "Gerente General",
-    phone: "+507 6671-2333"
-  },
+  // ✅ Personas de contacto (TODO MAYÚSCULAS)
+  contacts: [
+    { name: "MARIAN PEREZ", phone: "+507 6534-3521" },
+    { name: "STEVE NAHEM", phone: "+507 6671-2333" }
+  ],
 
-  brand: {
-    logo: "/images/brand/intramar-logo.png"
-  },
+  brand: { logo: "/images/brand/intramar-logo.png" },
 
   images: {
     warehouse1: "/images/warehouse/warehouse-01.jpg",
