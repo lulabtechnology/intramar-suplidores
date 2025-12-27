@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import BrandBackground from "@/components/BrandBackground";
+import BrandBackgroundLight from "@/components/BrandBackgroundLight";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
@@ -25,15 +25,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      {/* ✅ Ya NO ponemos bg-neutral-950 aquí */}
-      <body className="min-h-screen text-neutral-100 antialiased">
-        {/* Fondo WOW global */}
-        <BrandBackground />
+      <body className="min-h-screen text-slate-900 antialiased">
+        <BrandBackgroundLight />
 
-        {/* Skip link */}
-        <a href="#content" className="skip-link">
-          Saltar al contenido
-        </a>
+        <a href="#content" className="skip-link">Saltar al contenido</a>
 
         <Navbar />
 
