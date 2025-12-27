@@ -11,18 +11,22 @@ export default function Hero() {
     "Hola, necesito una cotización. ¿Me pueden ayudar?"
   );
 
+  // cover = más pro (puede recortar); contain = siempre completa
+  const HERO_FIT: "cover" | "contain" = "cover";
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src={site.images.warehouse2}
-          alt="Warehouse"
+          src="/images/hero/hero.jpg"
+          alt="Hero"
           fill
-          className="object-cover opacity-25"
           priority
+          sizes="100vw"
+          className={HERO_FIT === "cover" ? "object-cover" : "object-contain"}
         />
-        {/* Light overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/55 to-white/90" />
+        {/* Overlay light para legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/88 via-white/70 to-white/92" />
       </div>
 
       <Container className="relative py-16 md:py-24">
@@ -35,23 +39,25 @@ export default function Hero() {
 
         <FadeIn delay={0.05}>
           <h1 className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl">
-            <span className="grad-text">{site.home.hero.headline}</span>
+            <span className="grad-text">Suministros y soluciones</span> <br />
+            <span className="grad-text">para tu operación</span>
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 md:text-lg">
-            {site.home.hero.subheadline}
+            Catálogo por categorías: textiles, insumos marinos, kits, agua, plásticos, seguridad y protección,
+            energía solar y renovable y agrícolas. Cotiza por WhatsApp o email.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.15}>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href={wa} variant="primary">
-              {site.home.hero.primaryCta}
+              Cotizar por WhatsApp
             </ButtonLink>
             <ButtonLink href="#categories" variant="secondary">
-              {site.home.hero.secondaryCta}
+              Ver categorías
             </ButtonLink>
           </div>
         </FadeIn>
