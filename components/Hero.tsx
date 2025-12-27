@@ -6,7 +6,8 @@ import { site } from "@/data/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export default function Hero() {
-  const wa = buildWhatsAppLink(site.phones[0], "Hola, necesito una cotización. ¿Me pueden ayudar?");
+  const wa = buildWhatsAppLink(site.whatsappPhone, "Hola, necesito una cotización. ¿Me pueden ayudar?");
+
   return (
     <section className="relative overflow-hidden">
       {/* Background */}
