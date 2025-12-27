@@ -6,11 +6,13 @@ import { site } from "@/data/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export default function Hero() {
-  const wa = buildWhatsAppLink(site.whatsappPhone, "Hola, necesito una cotización. ¿Me pueden ayudar?");
+  const wa = buildWhatsAppLink(
+    site.whatsappPhone,
+    "Hola, necesito una cotización. ¿Me pueden ayudar?"
+  );
 
   return (
     <section className="relative overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src={site.images.warehouse2}
@@ -57,7 +59,7 @@ export default function Hero() {
           <div className="mt-10 grid gap-3 sm:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
               <p className="text-sm font-medium text-white">WhatsApp</p>
-              <p className="mt-1 text-sm text-neutral-300">{site.phones[0]}</p>
+              <p className="mt-1 text-sm text-neutral-300">{site.whatsappPhone}</p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
               <p className="text-sm font-medium text-white">Email</p>
