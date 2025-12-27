@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import ContactCards from "@/components/ContactCards";
+import MapEmbed from "@/components/MapEmbed";
 
 export default function ContactPage() {
   return (
@@ -15,6 +16,7 @@ export default function ContactPage() {
 
       <section className="bg-transparent">
         <ContactCards />
+        <MapEmbed />
       </section>
     </>
   );
