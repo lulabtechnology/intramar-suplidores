@@ -1,164 +1,93 @@
-"use client";
-
-import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
-import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
-
 import Container from "@/components/Container";
+import FadeIn from "@/components/motion/FadeIn";
 import ButtonLink from "@/components/ui/ButtonLink";
-import IconButton from "@/components/ui/IconButton";
 import { site } from "@/data/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
-import { cn } from "@/lib/cn";
 
-const navItems = [
-  { href: "/products", label: "Productos" },
-  { href: "/about", label: "Sobre" },
-  { href: "/contact", label: "Contacto" }
-];
-
-export default function Navbar() {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-
-  const wa = useMemo(
-    () => buildWhatsAppLink(site.whatsappPhone, "Hola, necesito una cotización. ¿Me pueden ayudar?"),
-    []
+export default function Hero() {
+  const wa = buildWhatsAppLink(
+    site.whatsappPhone,
+    "Hola, necesito una cotización. ¿Me pueden ayudar?"
   );
 
-  useEffect(() => setOpen(false), [pathname]);
-
-  useEffect(() => {
-    if (!open) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = prev; };
-  }, [open]);
-
-  const isActive = (href: string) =>
-    pathname === href || (href !== "/" && pathname?.startsWith(href));
+  // cover = más pro (puede recortar un poco)
+  const HERO_FIT: "cover" | "contain" = "cover";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/70 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir a inicio">
-          <span className="relative h-9 w-9 overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <Image
-              src={site.brand.logo}
-              alt="INTRAMAR logo"
-              fill
-              className="object-contain p-1"
-              priority
-            />
-          </span>
-          <span className="font-bold tracking-tight text-slate-900">
-            INTRAMAR
-          </span>
-        </Link>
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero/hero.jpg"
+          alt="Hero"
+          fill
+          priority
+          sizes="100vw"
+          className={HERO_FIT === "cover" ? "object-cover" : "object-contain"}
+        />
 
-        <nav className="hidden items-center gap-6 text-sm md:flex" aria-label="Navegación principal">
-          {navItems.map((it) => (
-            <Link
-              key={it.href}
-              href={it.href}
-              className={cn(
-                "transition hover:text-slate-900",
-                isActive(it.href) ? "text-slate-900 font-semibold" : "text-slate-600"
-              )}
-            >
-              {it.label}
-            </Link>
-          ))}
-        </nav>
+        {/* 1) Blur suave real (sin dañar demasiado la imagen) */}
+        <div className="absolute inset-0 backdrop-blur-[4px]" />
 
-        <div className="flex items-center gap-2">
-          <ButtonLink href={wa} variant="primary" className="hidden sm:inline-flex">
-            Cotizar
-          </ButtonLink>
+        {/* 2) Overlay light para legibilidad total */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/88 via-white/72 to-white/92" />
 
-          <IconButton
-            className="md:hidden"
-            onClick={() => setOpen(true)}
-            aria-label="Abrir menú"
-            aria-expanded={open}
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            </svg>
-          </IconButton>
-        </div>
+        {/* 3) Glow con colores del logo */}
+        <div className="absolute -left-40 top-10 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
+        <div className="absolute right-[-80px] top-28 h-80 w-80 rounded-full bg-emerald-400/20 blur-3xl" />
+      </div>
+
+      <Container className="relative py-16 md:py-24">
+        <FadeIn>
+          <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-xs text-slate-700 shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500" />
+            <span className="font-semibold text-slate-900">{site.company}</span>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.05}>
+          <h1 className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl">
+            <span className="grad-text">Suministros y soluciones</span> <br />
+            <span className="grad-text">para tu operación</span>
+          </h1>
+        </FadeIn>
+
+        <FadeIn delay={0.1}>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-800 md:text-lg">
+            Catálogo por categorías: textiles, insumos marinos, kits, agua, plásticos, seguridad y protección,
+            energía solar y renovable y agrícolas. Cotiza por WhatsApp o email.
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.15}>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <ButtonLink href={wa} variant="primary">
+              Cotizar por WhatsApp
+            </ButtonLink>
+            <ButtonLink href="#categories" variant="secondary">
+              Ver categorías
+            </ButtonLink>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.2}>
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            <div className="surface surface-hover p-5">
+              <p className="text-sm font-bold text-slate-900">WhatsApp</p>
+              <p className="mt-1 text-sm text-slate-700">{site.whatsappPhone}</p>
+              <p className="mt-2 text-xs text-slate-500">Principal</p>
+            </div>
+            <div className="surface surface-hover p-5">
+              <p className="text-sm font-bold text-slate-900">Email</p>
+              <p className="mt-1 text-sm text-slate-700">{site.emails[1]}</p>
+            </div>
+            <div className="surface surface-hover p-5">
+              <p className="text-sm font-bold text-slate-900">Ubicación</p>
+              <p className="mt-1 text-sm text-slate-700">{site.address}</p>
+            </div>
+          </div>
+        </FadeIn>
       </Container>
-
-      <AnimatePresence>
-        {open ? (
-          <motion.div
-            className="fixed inset-0 z-[60] md:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div
-              className="absolute inset-0 bg-slate-900/20"
-              onClick={() => setOpen(false)}
-              aria-hidden="true"
-            />
-
-            <motion.div
-              className="absolute right-0 top-0 h-full w-[86%] max-w-sm border-l border-slate-200 bg-white"
-              initial={{ x: 24, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 24, opacity: 0 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              role="dialog"
-              aria-modal="true"
-              aria-label="Menú"
-            >
-              <div className="flex items-center justify-between border-b border-slate-200 p-4">
-                <p className="text-sm font-bold text-slate-900">MENÚ</p>
-                <IconButton onClick={() => setOpen(false)} aria-label="Cerrar menú">
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                  </svg>
-                </IconButton>
-              </div>
-
-              <div className="p-4">
-                <div className="space-y-2">
-                  {navItems.map((it) => (
-                    <Link
-                      key={it.href}
-                      href={it.href}
-                      className={cn(
-                        "block rounded-2xl border px-4 py-3 text-sm transition",
-                        isActive(it.href)
-                          ? "border-slate-300 bg-slate-900 text-white"
-                          : "border-slate-200 bg-white hover:bg-slate-50 text-slate-900"
-                      )}
-                    >
-                      {it.label}
-                    </Link>
-                  ))}
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <p className="text-sm font-bold text-slate-900">WHATSAPP</p>
-                  <p className="mt-2 text-sm text-slate-700">{site.whatsappPhone}</p>
-                  <div className="mt-4">
-                    <ButtonLink href={wa} variant="primary" className="w-full">
-                      Cotizar por WhatsApp
-                    </ButtonLink>
-                  </div>
-                  <p className="mt-4 text-xs text-slate-600">
-                    Tel secundario: {site.phones[1]}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </header>
+    </section>
   );
 }
