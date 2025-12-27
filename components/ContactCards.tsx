@@ -5,8 +5,8 @@ import { site } from "@/data/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export default function ContactCards() {
-  const wa1 = buildWhatsAppLink(site.phones[0], "Hola, necesito una cotización. ¿Me pueden ayudar?");
-  const wa2 = buildWhatsAppLink(site.phones[1], "Hola, necesito una cotización. ¿Me pueden ayudar?");
+  const wa = buildWhatsAppLink(site.whatsappPhone, "Hola, necesito una cotización. ¿Me pueden ayudar?");
+
   return (
     <Container className="py-12">
       <div className="grid gap-4 lg:grid-cols-3">
@@ -14,13 +14,14 @@ export default function ContactCards() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <p className="text-sm font-semibold text-white">WhatsApp</p>
             <p className="mt-2 text-sm text-neutral-300">
-              Principal: {site.phones[0]} <br />
-              Alterno: {site.phones[1]}
+              {site.whatsappPhone}
             </p>
             <div className="mt-5 flex flex-col gap-3">
-              <ButtonLink href={wa1} variant="primary">WhatsApp principal</ButtonLink>
-              <ButtonLink href={wa2} variant="secondary">WhatsApp alterno</ButtonLink>
+              <ButtonLink href={wa} variant="primary">Escribir por WhatsApp</ButtonLink>
             </div>
+            <p className="mt-4 text-xs text-white/50">
+              Tel alterno (informativo): {site.phones[1]}
+            </p>
           </div>
         </FadeIn>
 
@@ -44,12 +45,15 @@ export default function ContactCards() {
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <p className="text-sm font-semibold text-white">Oficina</p>
             <p className="mt-2 text-sm text-neutral-300">{site.address}</p>
+
             <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
               <p className="text-sm font-semibold text-white">Contacto</p>
               <p className="mt-2 text-sm text-neutral-300">
-                {site.contact.name} — {site.contact.role} <br />
-                {site.contact.phone}
+                {site.contact.name} — {site.contact.role}
               </p>
+              {site.contact.phone ? (
+                <p className="mt-1 text-sm text-neutral-300">{site.contact.phone}</p>
+              ) : null}
             </div>
           </div>
         </FadeIn>
