@@ -1,54 +1,40 @@
 export const site = {
   company: "INTRAMAR SUPLIDORES S.A",
-  ruc: "155751256-2-2024  D.V. 35",
+  ruc: "R.U.C. 155751256-2-2024  D.V. 35",
   address: "Calle 75, Local No.12, San Francisco, Panamá, Ciudad de Panama",
 
-  // ✅ WhatsApp principal (Marian Perez)
+  // Principal
   whatsappPhone: "+507 6534-3521",
 
-  // Teléfonos (principal, secundario)
+  // Alterno
   phones: ["+507 6534-3521", "+507 6671-2333"],
 
   emails: ["intramar28@gmail.com", "ventas@intramar.com.pa", "ventas@intramars.com"],
 
-  // ✅ Personas de contacto (TODO MAYÚSCULAS)
   contacts: [
-    { name: "MARIAN PEREZ", phone: "+507 6534-3521" },
-    { name: "STEVE NAHEM", phone: "+507 6671-2333" }
+    { name: "Marian Perez", role: "Contacto", phone: "+507 6534-3521" },
+    { name: "Steve Nahem", role: "Gerente General", phone: "+507 6671-2333" },
   ],
 
-  brand: { logo: "/images/brand/intramar-logo.png" },
-
   images: {
+    // Brand / general
+    logo: "/images/brand/intramar-logo.png",
+    hero: "/images/hero/hero.jpg",
+
+    // Warehouse
     warehouse1: "/images/warehouse/warehouse-01.jpg",
     warehouse2: "/images/warehouse/warehouse-02.jpg",
+
+    // Featured solar lighting & cooling (rutas que ya definiste en /public)
     solarLamp1: "/images/products/solar-lamp-01.jpg",
     solarLamp2: "/images/products/solar-lamp-02.jpg",
     solarLamp3: "/images/products/solar-lamp-03.jpg",
     solarKit1: "/images/products/solar-kit-01.jpg",
     solarKit2: "/images/products/solar-kit-02.jpg",
     solarFan1: "/images/products/solar-fan-01.jpg",
-    solarFan2: "/images/products/solar-fan-02.jpg"
+    solarFan2: "/images/products/solar-fan-02.jpg",
+
+    // Kits image (la nueva)
+    kits1: "/images/kits/kits-01.jpg",
   },
-
-  partners: [
-    { name: "PNUD", src: "/images/partners/pnud.png" },
-    { name: "FAO", src: "/images/partners/fao.png" },
-    { name: "UNOPS", src: "/images/partners/unops.png" },
-    { name: "OIM", src: "/images/partners/oim.png" },
-    { name: "WFP", src: "/images/partners/wfp.png" },
-    { name: "UNICEF", src: "/images/partners/unicef.png" },
-    { name: "UNHCR", src: "/images/partners/unhcr.png" },
-    { name: "AECID", src: "/images/partners/aecid.png" }
-  ],
-
-  home: {
-    hero: {
-      headline: "Suministros y soluciones para tu operación",
-      subheadline:
-        "Catálogo por categorías: textiles, insumos marinos, kits, agua, plásticos, seguridad y protección, energía y agrícolas. Cotiza por WhatsApp o email.",
-      primaryCta: "Cotizar por WhatsApp",
-      secondaryCta: "Ver categorías"
-    }
-  }
 };
