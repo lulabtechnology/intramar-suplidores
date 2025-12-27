@@ -11,7 +11,7 @@ export default function Hero() {
     "Hola, necesito una cotización. ¿Me pueden ayudar?"
   );
 
-  // cover = más pro (puede recortar); contain = siempre completa
+  // cover = más pro (puede recortar un poco)
   const HERO_FIT: "cover" | "contain" = "cover";
 
   return (
@@ -25,8 +25,16 @@ export default function Hero() {
           sizes="100vw"
           className={HERO_FIT === "cover" ? "object-cover" : "object-contain"}
         />
-        {/* Overlay light para legibilidad */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/88 via-white/70 to-white/92" />
+
+        {/* 1) Blur suave real (sin dañar demasiado la imagen) */}
+        <div className="absolute inset-0 backdrop-blur-[4px]" />
+
+        {/* 2) Overlay light para legibilidad total */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/88 via-white/72 to-white/92" />
+
+        {/* 3) Glow con colores del logo */}
+        <div className="absolute -left-40 top-10 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
+        <div className="absolute right-[-80px] top-28 h-80 w-80 rounded-full bg-emerald-400/20 blur-3xl" />
       </div>
 
       <Container className="relative py-16 md:py-24">
@@ -45,7 +53,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 md:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-800 md:text-lg">
             Catálogo por categorías: textiles, insumos marinos, kits, agua, plásticos, seguridad y protección,
             energía solar y renovable y agrícolas. Cotiza por WhatsApp o email.
           </p>
