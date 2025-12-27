@@ -3,10 +3,10 @@ export const site = {
   ruc: "155751256-2-2024  D.V. 35",
   address: "Calle 75, Local No.12, San Francisco, Panamá, Ciudad de Panama",
 
-  // 👇 WhatsApp principal (cliente pidió 6534-3521)
+  // ✅ WhatsApp principal (cliente pidió 6534-3521)
   whatsappPhone: "+507 6534-3521",
 
-  // Teléfonos (puedes mantener ambos como información general)
+  // Teléfonos (mantenemos el otro como alterno informativo)
   phones: ["+507 6534-3521", "+507 6671-2333"],
 
   emails: ["intramar28@gmail.com", "ventas@intramar.com.pa", "ventas@intramars.com"],
@@ -14,11 +14,12 @@ export const site = {
   contact: {
     name: "Steve Nahem",
     role: "Gerente General",
-    // (no ponemos teléfono aquí para no “amarrar” un número a una persona)
-    phone: ""
+    phone: "+507 6671-2333"
   },
 
-  brand: { logo: "/images/brand/intramar-logo.png" },
+  brand: {
+    logo: "/images/brand/intramar-logo.png"
+  },
 
   images: {
     warehouse1: "/images/warehouse/warehouse-01.jpg",
