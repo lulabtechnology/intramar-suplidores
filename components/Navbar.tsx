@@ -22,15 +22,14 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
   const wa = useMemo(
-    () => buildWhatsAppLink(site.phones[0], "Hola, necesito una cotización. ¿Me pueden ayudar?"),
+    () => buildWhatsAppLink(site.whatsappPhone, "Hola, necesito una cotización. ¿Me pueden ayudar?"),
     []
   );
 
-  // Cierra menú al cambiar de ruta
   useEffect(() => setOpen(false), [pathname]);
 
-  // Bloquea scroll cuando el menú está abierto
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -59,7 +58,6 @@ export default function Navbar() {
           <span className="font-semibold tracking-tight text-white">INTRAMAR</span>
         </Link>
 
-        {/* Desktop */}
         <nav className="hidden items-center gap-6 text-sm text-neutral-300 md:flex" aria-label="Navegación principal">
           {navItems.map((it) => (
             <Link
@@ -80,7 +78,6 @@ export default function Navbar() {
             Cotizar
           </ButtonLink>
 
-          {/* Mobile button */}
           <IconButton
             className="md:hidden"
             onClick={() => setOpen(true)}
@@ -94,7 +91,6 @@ export default function Navbar() {
         </div>
       </Container>
 
-      {/* Mobile overlay + panel */}
       <AnimatePresence>
         {open ? (
           <motion.div
@@ -147,15 +143,19 @@ export default function Navbar() {
                 </div>
 
                 <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-sm font-semibold text-white">Cotizar</p>
+                  <p className="text-sm font-semibold text-white">WhatsApp</p>
                   <p className="mt-2 text-sm text-neutral-300">
-                    WhatsApp principal: {site.phones[0]}
+                    {site.whatsappPhone}
                   </p>
                   <div className="mt-4">
                     <ButtonLink href={wa} variant="primary" className="w-full">
                       Cotizar por WhatsApp
                     </ButtonLink>
                   </div>
+
+                  <p className="mt-4 text-xs text-white/50">
+                    Tel alterno: {site.phones[1]}
+                  </p>
                 </div>
               </div>
             </motion.div>
