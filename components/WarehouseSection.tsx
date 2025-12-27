@@ -12,9 +12,6 @@ export default function WarehousingSection() {
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
             Warehousing & Logistics
           </h2>
-          <p className="mt-3 text-sm text-slate-700">
-            Sección visual basada en tus fotos de bodega. Texto genérico (sin inventar números).
-          </p>
         </FadeIn>
 
         <div className="mt-8 grid gap-4 lg:grid-cols-2">
@@ -23,7 +20,7 @@ export default function WarehousingSection() {
               <ul className="space-y-3 text-sm text-slate-700">
                 <li>• Espacios para recepción y resguardo de mercancía según necesidad.</li>
                 <li>• Preparación y organización de pedidos para coordinación de despacho.</li>
-                <li>• Soporte logístico para proyectos y entregas (sin cifras ni promesas específicas).</li>
+                <li>• Soporte logístico para proyectos y entregas.</li>
               </ul>
             </div>
           </FadeIn>
