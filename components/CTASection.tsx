@@ -5,8 +5,7 @@ import { site } from "@/data/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export default function CTASection() {
-  const wa1 = buildWhatsAppLink(site.phones[0], "Hola, necesito una cotización. ¿Me pueden ayudar?");
-  const wa2 = buildWhatsAppLink(site.phones[1], "Hola, necesito una cotización. ¿Me pueden ayudar?");
+  const wa = buildWhatsAppLink(site.whatsappPhone, "Hola, necesito una cotización. ¿Me pueden ayudar?");
   return (
     <section className="border-t border-white/10 bg-neutral-950">
       <Container className="py-16">
@@ -20,10 +19,13 @@ export default function CTASection() {
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={wa1} variant="primary">WhatsApp principal</ButtonLink>
-              <ButtonLink href={wa2} variant="secondary">WhatsApp alterno</ButtonLink>
+              <ButtonLink href={wa} variant="primary">WhatsApp</ButtonLink>
               <ButtonLink href="/contact" variant="secondary">Contacto</ButtonLink>
             </div>
+
+            <p className="mt-5 text-xs text-white/50">
+              WhatsApp: {site.whatsappPhone} · Email: {site.emails[1]}
+            </p>
           </div>
         </FadeIn>
       </Container>
