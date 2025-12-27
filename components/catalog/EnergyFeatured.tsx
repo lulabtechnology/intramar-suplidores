@@ -11,15 +11,15 @@ const featured = [
     img: site.images.solarLamp3
   },
   {
-    title: "Abanicos solares",
-    desc: "Soluciones de ventilación con uso eficiente de energía.",
+    title: "Abanicos",
+    desc: "Opciones de ventilación para diferentes escenarios.",
     img: site.images.solarFan2
   }
 ];
 
 export default function EnergyFeatured() {
   const wa = buildWhatsAppLink(
-    site.phones[0],
+    site.whatsappPhone,
     "Hola, quiero cotizar lámparas/linternas solares y abanicos. ¿Me ayudan?"
   );
 
@@ -28,10 +28,10 @@ export default function EnergyFeatured() {
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
         <div>
           <p className="text-xs font-medium tracking-[0.2em] text-white/60">
-            DESTACADO EN ENERGÍA
+            DESTACADO
           </p>
           <p className="mt-3 text-lg font-semibold tracking-tight text-white">
-            Solar Lighting & Cooling
+            Energía solar y renovable
           </p>
           <p className="mt-2 text-sm text-neutral-300">
             Sección destacada para lámparas/linternas solares y abanicos.
