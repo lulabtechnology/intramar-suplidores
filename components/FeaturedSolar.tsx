@@ -20,7 +20,11 @@ export default function FeaturedSolar() {
     "Hola, necesito una cotización. ¿Me pueden ayudar?"
   );
 
-  // ✅ SOLO CAMBIO DE TITULOS/SUBTITULOS (rutas igual)
+  // ✅ 4 CARDS EXACTAS (sin agregados)
+  // ✅ Reemplazos:
+  // - "Linternas solares" -> "Deshidratadores solares"
+  // - "Kits solares" -> "Equipamiento de buceo"
+  // - (un) "Abanicos" -> "Insumos marinos"
   const items: Item[] = [
     {
       title: "Lámparas solares",
@@ -28,32 +32,19 @@ export default function FeaturedSolar() {
       img: site.images.solarLamp1,
     },
     {
-      // (2da imagen) antes: Linternas solares
       title: "Deshidratadores solares",
       desc: "Soluciones solares para apoyar procesos de secado.",
       img: site.images.solarLamp2,
     },
     {
-      title: "Abanicos",
-      desc: "Opciones de ventilación para diferentes escenarios de uso.",
-      img: site.images.solarFan1,
-    },
-    {
-      title: "Kits solares",
-      desc: "Soluciones solares según el requerimiento.",
-      img: site.images.solarKit1,
-    },
-    {
-      // (5ta imagen) motores fuera de borda
       title: "Insumos marinos",
-      desc: "Motores fuera de borda y suministros para operaciones marinas.",
-      img: site.images.solarKit2,
+      desc: "Suministros para operaciones marinas según necesidad.",
+      img: site.images.solarFan1, // 👈 usamos la ruta existente (NO cambiamos rutas)
     },
     {
-      // (6ta imagen) buceo
       title: "Equipamiento de buceo",
       desc: "Accesorios y equipamiento para buceo según necesidad.",
-      img: site.images.solarLamp3,
+      img: site.images.solarKit1, // 👈 usamos la ruta existente (NO cambiamos rutas)
     },
   ];
 
@@ -65,18 +56,16 @@ export default function FeaturedSolar() {
             DESTACADO
           </p>
 
-          {/* ✅ TÍTULO NUEVO */}
           <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
             <span className="grad-text">Productos más destacados</span>
           </h2>
 
-          {/* ✅ SUBTÍTULO NUEVO (conecta con el título) */}
           <p className="mt-3 max-w-2xl text-sm text-slate-700">
             Selección de productos destacados para tu operación. Contáctanos para cotizar.
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it) => (
             <FadeIn key={it.title}>
               <motion.div
@@ -90,7 +79,7 @@ export default function FeaturedSolar() {
                     alt={it.title}
                     fill
                     className="object-contain p-6"
-                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    sizes="(max-width: 1024px) 100vw, 25vw"
                   />
                 </div>
 
