@@ -20,11 +20,9 @@ export default function FeaturedSolar() {
     "Hola, necesito una cotización. ¿Me pueden ayudar?"
   );
 
-  // ✅ 4 CARDS EXACTAS (sin agregados)
-  // ✅ Reemplazos:
-  // - "Linternas solares" -> "Deshidratadores solares"
-  // - "Kits solares" -> "Equipamiento de buceo"
-  // - (un) "Abanicos" -> "Insumos marinos"
+  // ✅ 3 CARDS EXACTAS
+  // ✅ La tercera combina "Insumos marinos + Equipamiento de buceo"
+  // ✅ Usa imagen /images/products/solar-fan-01.jpg (sin rutas nuevas)
   const items: Item[] = [
     {
       title: "Lámparas solares",
@@ -37,14 +35,9 @@ export default function FeaturedSolar() {
       img: site.images.solarLamp2,
     },
     {
-      title: "Insumos marinos",
-      desc: "Suministros para operaciones marinas según necesidad.",
-      img: site.images.solarFan1, // 👈 usamos la ruta existente (NO cambiamos rutas)
-    },
-    {
-      title: "Equipamiento de buceo",
-      desc: "Accesorios y equipamiento para buceo según necesidad.",
-      img: site.images.solarKit1, // 👈 usamos la ruta existente (NO cambiamos rutas)
+      title: "Insumos marinos y equipamiento de buceo",
+      desc: "Suministros para operaciones marinas y accesorios de buceo según necesidad.",
+      img: site.images.solarFan1, // => /images/products/solar-fan-01.jpg
     },
   ];
 
@@ -65,7 +58,8 @@ export default function FeaturedSolar() {
           </p>
         </FadeIn>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {/* ✅ Grid ajustado para 3 cards */}
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {items.map((it) => (
             <FadeIn key={it.title}>
               <motion.div
@@ -79,7 +73,7 @@ export default function FeaturedSolar() {
                     alt={it.title}
                     fill
                     className="object-contain p-6"
-                    sizes="(max-width: 1024px) 100vw, 25vw"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
                   />
                 </div>
 
