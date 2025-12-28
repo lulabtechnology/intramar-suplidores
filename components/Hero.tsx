@@ -38,20 +38,17 @@ export default function Hero() {
 
         <FadeIn delay={0.05}>
           <h1 className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl">
-            <span className="grad-text">
-              Suministros confiables
-            </span>{" "}
+            <span className="grad-text">Suministros confiables</span>
             <br />
-            <span className="grad-text">
-              cuando más se necesitan
-            </span>
+            <span className="grad-text">cuando más se necesitan</span>
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.1}>
+          {/* ✅ SUBTÍTULO NUEVO EXACTO COMO PEDISTE */}
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-800 md:text-lg">
-            Catálogo por categorías: textiles, insumos marinos, kits, agua, plásticos,
-            seguridad y protección, energía solar y renovable y agrícolas. Cotiza por WhatsApp o email.
+            Catálogo por categorías: textiles, insumos marinos y equipamiento de buceo, kits, agua,
+            energía solar y renovable, productos agrícolas. Cotiza por WhatsApp o email.
           </p>
         </FadeIn>
 
