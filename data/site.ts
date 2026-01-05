@@ -9,7 +9,7 @@ export const site = {
   // Alterno
   phones: ["+507 6534-3521", "+507 6671-2333"],
 
-  emails: ["intramar28@gmail.com", "ventas@intramar.com.pa"],
+  emails: ["intramar28@gmail.com", "ventas@intramars.com.pa"],
 
   contacts: [
     { name: "Marian Perez", role: "Contacto", phone: "+507 6534-3521" },
