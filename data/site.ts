@@ -2,7 +2,7 @@ export const site = {
   company: "INTRAMAR SUPLIDORES S.A",
   ruc: "R.U.C. 155751256-2-2024  D.V. 35",
   address: "Calle 75, Local No.12, San Francisco, Panamá, Ciudad de Panama",
-  emails: "ventas@intramars.com",
+
 
   // Principal
   whatsappPhone: "+507 6534-3521",
