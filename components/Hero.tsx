@@ -73,7 +73,7 @@ export default function Hero() {
 
             <div className="surface surface-hover p-5">
               <p className="text-sm font-bold text-slate-900">Email</p>
-              <p className="mt-2 text-sm font-semibold text-slate-700">{site.emails[1]}</p>
+              <p className="mt-2 text-sm font-semibold text-slate-700">{site.emails[0]}</p>
             </div>
 
             <div className="surface surface-hover p-5">
